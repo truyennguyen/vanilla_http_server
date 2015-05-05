@@ -69,7 +69,3 @@ function getDateTime() {
 
     return year + ":" + month + ":" + day + ":" + hour + ":" + min + ":" + sec;
 }
-
-**/node_modules/
-**/*.sw?
-**/*.log
