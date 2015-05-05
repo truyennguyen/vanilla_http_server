@@ -4,12 +4,12 @@ var http = require('http');
 
 var server = http.createServer(function(req, res){
     var pathArr = req.url.split('/');
+    var currentTime = getDateTime();
 
 	if(req.url === '/time'){
 		res.writeHead(200, {
 			'Content-Type' : 'application/json'
 		});
-		var currentTime = getDateTime();
 		res.write(JSON.stringify({msg: 'Current time is ' + currentTime}));
 		res.end();
 	}
@@ -17,7 +17,6 @@ var server = http.createServer(function(req, res){
         res.writeHead(200, {
             'Content-Type' : 'application/json'
         });
-        var currentTime = getDateTime();
         res.write(JSON.stringify({msg: 'hello ' + pathArr[2]}));
         res.end();
     }
